@@ -5,7 +5,7 @@
 Acari only supports `amd64`, `armv8`, `rv64g` and their later revisions.
 
 ### CISC
-<!-- - `x86`: A 32-bit only CPU architecture from Intel. -->
+- `i386`: A 32-bit only CPU architecture from Intel.
 - `amd64`: A 64-bit CPU architecture from AMD.
   - `amd64v2`: `amd64` with extensions like SSE3.
   - `amd64v3`: `amd64v2` with extensions like AVX and AVX2.
