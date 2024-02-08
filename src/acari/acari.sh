@@ -20,7 +20,7 @@ esac
 cpuFlags=$(cat "/proc/cpuinfo")
 case $detectArch in
 	"amd64" )
-		if [[ "$cpuFlags" == *"avx256"* ]]; then
+		if [[ "$cpuFlags" == *"avx512"* ]]; then
 			detectArch="amd64v4"
 		elif [[ "$cpuFlags" == *"avx2"* ]]; then
 			detectArch="amd64v3"
