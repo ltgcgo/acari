@@ -13,7 +13,7 @@ case $nativeArch in
 		detectArch="arm64"
 		;;
 	"riscv64" )
-		detectArch="rv64"
+		detectArch="riscv64"
 		;;
 esac
 # Revision match
@@ -26,6 +26,17 @@ case $detectArch in
 			detectArch="amd64v3"
 		elif [[ "$cpuFlags" == *"sse3"* ]]; then
 			detectArch="amd64v2"
+		fi
+		;;
+	"arm64" )
+		if [[ "$cpuFlags" == *"ilrcpc"* ]]; then
+			detectArch="arm64_4"
+		elif [[ "$cpuFlags" == *"lrcpc"* ]]; then
+			detectArch="arm64_3"
+		elif [[ "$cpuFlags" == *"asimddp"* ]]; then
+			detectArch="arm64_2"
+		elif [[ "$cpuFlags" == *"atomics"* ]] && [[ "$cpuFlags" == *"asimdrdm"* ]]; then
+			detectArch="arm64_1"
 		fi
 		;;
 esac
